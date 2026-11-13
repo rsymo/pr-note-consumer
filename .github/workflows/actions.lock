@@ -4,7 +4,7 @@
 version: 'v0.0.2'
 workflows:
     '.github/workflows/issuecomment.yml':
-        - 'steve-glass/pr-note@v3'
+        - 'rsymo/pr-note@v3'
     '.github/workflows/zizmor.yml':
         - 'actions/checkout@v6.1.0'
         - 'zizmorcore/zizmor-action@v0.6.4'
@@ -19,7 +19,7 @@ dependencies:
         commit: 'sha1-cdf488f595d80d6e07e03d4674febd5ab45fa938'
         owner_id: 9919
         repo_id: 259445878
-    'steve-glass/pr-note@v3':
+    'rsymo/pr-note@v3':
         ref: 'v3'
         commit: 'sha1-a53b99fc9738713d0a1d0dba397606f0f0352a98'
         owner_id: 84886334
