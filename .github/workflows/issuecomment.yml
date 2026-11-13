@@ -21,7 +21,7 @@ jobs:
       pull-requests: write
     steps:
       - name: Post the note
-        uses: Steve-Glass/pr-note@v3
+        uses: rsymo/pr-note@v3
         with:
           token: ${{ github.token }}
           body: Thanks for the pull request!
