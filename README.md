@@ -206,3 +206,7 @@ presence of this file do not establish runtime enforcement. Use preflight to
 inspect current access and policy without committing its results. DEMO.md
 separates the manual CLI recording from deferred runtime verification and the
 independent firewall checks.
+
+
+
+...
