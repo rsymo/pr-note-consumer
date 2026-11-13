@@ -1,0 +1,41 @@
+# This workflow is managed by gh actions-lock.
+
+name: PR note
+run-name: PR note | comment ${{ github.event.comment.id }}
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions: {}
+
+jobs:
+  comment:
+    if: >-
+      github.event.issue.pull_request &&
+      github.event.comment.user.type != 'Bot' &&
+      !endsWith(github.event.comment.user.login, '[bot]')
+    runs-on: ubuntu-24.04-firewall
+    timeout-minutes: 5
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Post the note
+        uses: Steve-Glass/pr-note@v3
+        with:
+          token: ${{ github.token }}
+          body: Thanks for the pull request!
+
+      - name: Simulate a compromised dependency contacting an outside domain
+        shell: bash
+        run: |
+          echo "Requesting https://example.com/ (simulation; no secrets sent)"
+          curl --disable \
+            --fail \
+            --silent \
+            --show-error \
+            --proto '=https' \
+            --connect-timeout 10 \
+            --max-time 20 \
+            --output /dev/null \
+            https://example.com/
